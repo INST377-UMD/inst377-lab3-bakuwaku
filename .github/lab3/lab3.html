@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Icon Selector</title>
+    <link rel="stylesheet" href="lab3.css">
+
+</head>
+<body>
+
+    <header class="header-footer">
+        <h1>Fashion Icon</h1>
+        <p>Posted by Ester Manukyan</p>
+        <p>Choose your fashion icon here</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="https://www.google.com/search?q=kate+moss">Kate Moss</a></li>
+            <li><a href="https://www.google.com/search?q=doja+cat">Doja Cat</a></li>
+            <li><a href="https://www.google.com/search?q=marie+antoinette">Marie Antoinette</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <main>
+            <h2>Who is your fashion icon?</h2>
+            <form action="fashion-icon.html" method="GET">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            
+                <label for="choice">Choose:</label>
+                <select id="choice" name="choice">
+                    <option value="kate">Kate</option>
+                    <option value="doja">Doja</option>
+                    <option value="marie">Marie</option>
+                </select>
+            
+                <button type="submit">Submit</button>
+            </form>            
+        </main>
+
+        <aside>
+            <h3>Why Choose Them?</h3>
+            <p><strong>Kate Moss:</strong> The queen of effortless chic and timeless style.</p>
+            <p><strong>Doja Cat:</strong> Bold, futuristic, and always pushing boundaries.</p>
+            <p><strong>Marie Antoinette:</strong> The ultimate symbol of extravagance and elegance.</p>
+        </aside>
+    </div>
+
+    <footer class="header-footer">
+        <p>&copy; 2025 Fashion Icon Selector</p>
+    </footer>
+
+</body>
+</html>
+
