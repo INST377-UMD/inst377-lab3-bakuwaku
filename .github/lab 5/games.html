@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #4CAF50; 
+            color: white;
+            padding: 20px 0;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        nav {
+            background-color: #333;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+
+        nav ul li:hover {
+            background-color: #575757; 
+        }
+
+        .game-container {
+            padding: 20px;
+        }
+
+        .game-result {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .game-result div {
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+        }
+
+       
+        select, button {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin: 10px;
+            font-size: 16px;
+        }
+
+     
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Games</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="games.html">Games</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="game-container">
+        <h2>Rock, Paper, Scissors Game</h2>
+        <form id="gameForm" onsubmit="playGame(); return false;">
+            <div>
+                <label for="userChoice">Choose Your Option:</label>
+                <select id="userChoice" required>
+                    <option value="rock">Rock</option>
+                    <option value="paper">Paper</option>
+                    <option value="scissors">Scissors</option>
+                </select>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+
+        <div class="game-result">
+            <div id="userChoiceBox">You Chose:</div>
+            <div id="computerChoiceBox">Computer Chose:</div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Footer Content</p>
+    </footer>
+
+    <script>
+        function playGame() {
+            const userChoice = document.getElementById('userChoice').value;
+            const computerChoice = getComputerChoice();
+            
+            document.getElementById('userChoiceBox').innerText = `You Chose: ${userChoice.charAt(0).toUpperCase() + userChoice.slice(1)}`;
+            document.getElementById('computerChoiceBox').innerText = `Computer Chose: ${computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)}`;
+            
+            let result = getResult(userChoice, computerChoice);
+            
+            if (result === 'win') {
+                alert("You Win!");
+                document.body.style.backgroundColor = "green";
+            } else if (result === 'lose') {
+                alert("You Lose!");
+                document.body.style.backgroundColor = "red";
+            } else {
+                alert("Tie!");
+                document.body.style.backgroundColor = "blue";
+            }
+        }
+
+        function getComputerChoice() {
+            const choices = ['rock', 'paper', 'scissors'];
+            const randomIndex = Math.floor(Math.random() * 3);
+            return choices[randomIndex];
+        }
+
+        function getResult(userChoice, computerChoice) {
+            if (userChoice === computerChoice) {
+                return 'tie';
+            }
+
+            if ((userChoice === 'rock' && computerChoice === 'scissors') ||
+                (userChoice === 'scissors' && computerChoice === 'paper') ||
+                (userChoice === 'paper' && computerChoice === 'rock')) {
+                return 'win';
+            } else {
+                return 'lose';
+            }
+        }
+    </script>
+
+</body>
+</html>

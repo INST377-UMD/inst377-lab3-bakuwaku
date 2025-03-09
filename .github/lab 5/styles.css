@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50; 
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+       
+        nav {
+            background-color: #333;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+
+        nav ul li:hover {
+            background-color: #575757; 
+        }
+
+        
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        
+        .home-content {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .main-section {
+            flex: 0 0 60%;
+            border: 2px solid black;
+            padding: 20px;
+        }
+
+        .sidebar {
+            flex: 0 0 20%;
+            border: 2px solid black;
+            padding: 20px;
+        }
+
+        .box {
+            border: 2px solid #ddd;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+
+        img {
+            width: 50px; 
+            height: auto;
+        }
+
+     
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049; 
+        }
+
+        h3 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Home</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="games.html">Games</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    
+    <div class="home-content">
+        <div class="main-section">
+            <div class="box">
+                <h3>LinkedIn</h3>
+                <a href="https://www.linkedin.com/in/estermanukyan7/" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/600px-LinkedIn_logo_initials.png?20140125013055" alt="LinkedIn Logo">
+                </a>
+            </div>
+            <div class="box">Sub Section 1</div>
+            <div class="box">Sub Section 2</div>
+            <h2>Welcome to the Home Page!</h2>
+        </div>
+
+        <div class="sidebar">
+            <div class="box">
+                <p>Name: Ester Manukyan</p>
+                <p>Email: Emanukya@terpmail.umd.edu</p>
+            </div>
+            <div class="box">
+                <button onclick="location.href='contact.html'">Go to Contact</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Footer Content</p>
+    </footer>
+</body>
+</html>
