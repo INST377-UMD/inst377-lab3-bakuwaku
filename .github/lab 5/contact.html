@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Games</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="games.html">Games</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div id="gameForm">
+        <h2>Rock, Paper, Scissors Game</h2>
+        <form onsubmit="return playGame();">
+            <select id="userChoice">
+                <option value="rock">Rock</option>
+                <option value="paper">Paper</option>
+                <option value="scissors">Scissors</option>
+            </select>
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="userResult">
+            <div>You Chose: <span id="userChoiceResult"></span></div>
+            <div>Computer Chose: <span id="computerChoiceResult"></span></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Footer Content</p>
+    </footer>
+
+    <script>
+        function playGame() {
+            var userChoice = document.getElementById('userChoice').value;
+            var computerChoice = ['rock', 'paper', 'scissors'][Math.floor(Math.random() * 3)];
+
+            document.getElementById('userChoiceResult').innerText = userChoice;
+            document.getElementById('computerChoiceResult').innerText = computerChoice;
+
+            var resultMessage = '';
+            var bgColor = '';
+
+            if (userChoice === computerChoice) {
+                resultMessage = "It's a tie!";
+                bgColor = 'blue';
+            } else if ((userChoice === 'rock' && computerChoice === 'scissors') ||
+                       (userChoice === 'paper' && computerChoice === 'rock') ||
+                       (userChoice === 'scissors' && computerChoice === 'paper')) {
+                resultMessage = "You win!";
+                bgColor = 'green';
+            } else {
+                resultMessage = "You lose!";
+                bgColor = 'red';
+            }
+
+            alert(resultMessage);
+            document.body.style.backgroundColor = bgColor;
+            return false;
+        }
+    </script>
+</body>
+</html>
